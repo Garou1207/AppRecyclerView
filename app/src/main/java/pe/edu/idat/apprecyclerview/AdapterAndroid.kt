@@ -5,8 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import pe.edu.idat.apprecyclerview.databinding.ItemAndroidBinding
 
-class AdapterAndroid(val listImages: ArrayList<String>): RecyclerView.Adapter<AdapterAndroid.ViewHolder>(){
-
+class AdapterAndroid(val listAndroid: ArrayList<String>): RecyclerView.Adapter<AdapterAndroid.ViewHolder>(){
 
     inner class ViewHolder(val binding: ItemAndroidBinding): RecyclerView.ViewHolder(binding.root)
 
@@ -15,11 +14,9 @@ class AdapterAndroid(val listImages: ArrayList<String>): RecyclerView.Adapter<Ad
         return ViewHolder(binding)
     }
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
+    override fun getItemCount(): Int = listAndroid.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.binding.tvNomVersion.text = listAndroid[position]
     }
 }
